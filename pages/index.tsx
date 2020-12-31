@@ -18,6 +18,7 @@ const IndexPage: NextPage = () => {
       <Box
         display="flex"
         flexDirection="row"
+        alignItems="center"
         justifyContent="space-between"
         width="100%"
         maxWidth="1600px"
