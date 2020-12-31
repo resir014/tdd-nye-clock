@@ -5,9 +5,6 @@ import useStreamProgress from '~/utils/useStreamProgress'
 const ClockFace: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...rest }) => {
   const percentage = useStreamProgress()
 
-  // UNIX timestamp of 00:00:00 - UNIX timestamp of Date.now()
-  // lerp between midnight + 9pm
-
   const radius = 300
   const circumference = radius * 2 * Math.PI
 
@@ -18,7 +15,7 @@ const ClockFace: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...rest }) => {
         fill="transparent"
         strokeWidth={32}
         strokeDasharray={`${circumference} ${circumference}`}
-        strokeDashoffset={Math.floor(circumference - percentage * circumference)}
+        strokeDashoffset={Math.ceil(circumference - percentage * circumference)}
         r={radius}
         cx={320}
         cy={320}
