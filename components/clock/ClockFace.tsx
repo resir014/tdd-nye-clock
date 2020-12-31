@@ -18,7 +18,7 @@ const ClockFace: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...rest }) => {
         fill="transparent"
         strokeWidth={32}
         strokeDasharray={`${circumference} ${circumference}`}
-        strokeDashoffset={circumference - percentage * circumference}
+        strokeDashoffset={Math.floor(circumference - percentage * circumference)}
         r={radius}
         cx={320}
         cy={320}
